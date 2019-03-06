@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+
+		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+	
+		<!-- Bootstrap CDN -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<div class = "loginbox">
+		<h1>Welcome</h1> 
+		<form action = "./functions/login.php" method = "post">
+			<div class="inner-icon left-addon">
+				<span class="glyphicon glyphicon-user"></span>
+				<input type="text" name="username" placeholder="Enter Username" required>
+			</div>
+			<div class="inner-icon left-addon">
+				<span class="glyphicon glyphicon-lock"></span></p>
+				<input type="password" name="psw" placeholder="Enter Password" required>
+			</div>
+			<input type="submit" name="" value="Login">
+			<a onclick="document.getElementById('signup').style.display='block'" style="width:auto;"href="#">Don't have an account?</a>
+		</form>
+	</div>
+
+
+	<div id="signup" class="signupbox">
+		<form action="./functions/register.php" method = "post" class="signupbox-content">
+
+			<span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Popup">&times;</span>  
+			<div class="container">
+
+				<h2>Sign Up</h2>
+				<p>Enter the following information to create your account.</p>
+				<hr>
+				<label for="email"><b>Email</b></label>
+				<input type="text" placeholder="Enter Email" name="email" required>
+
+				<label for="psw"><b>Password</b></label>
+				<input type="password" placeholder="Enter Password" name="psw" required>
+
+				<label for="psw-repeat"><b>Repeat Password</b></label>
+				<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+				<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms And Privacy</a>.</p>
+
+				<button type="submit" class="signupbtn">Sign Up</button>
+			</div>
+		</form>
+	</div>
+
+	<script>
+	// Get the modal
+	var modal = document.getElementById('signup');
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+	</script>
+
+
+				
+</body>
+
+</html>
