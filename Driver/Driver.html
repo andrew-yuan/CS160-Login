@@ -77,11 +77,6 @@
 
 
 		function initMap() {
-			//delete later
-			
-			var sanjose = new google.maps.LatLng(37.344139, -121.892231);
-			var santaclara = new google.maps.LatLng(37.349889, -121.939009);
-
 			var directionsService = new google.maps.DirectionsService();
 			var directionsDisplay = new google.maps.DirectionsRenderer();
 			var map = new google.maps.Map(document.getElementById('map'), {
@@ -91,14 +86,14 @@
 			directionsDisplay.setMap(map);
 			directionsDisplay.setPanel(document.getElementById('right-panel'));
 
-			calculateAndDisplayRoute(directionsService, directionsDisplay, addresses);
+			calculateAndDisplayRoute(directionsService, directionsDisplay);
 
           	// auto center map fitting all markers on screen
-          	// none of these are working yet lmao
+          	/* none of these do anything atm
           	var bounds = new google.maps.LatLngBounds();
           	bounds.extend(santaclara);
           	bounds.extend(sanjose);
-          	map.fitBounds(bounds);
+          	map.fitBounds(bounds);*/
           	google.maps.event.trigger(map, 'resize');
           }
 
@@ -141,7 +136,6 @@
 			directionsService.route(request, function(result, status) {
 				if (status == google.maps.DirectionsStatus.OK) 
 				{
-      				//directionsDisplay.setPanel(document.getElementById('result'));
 					directionsDisplay.setDirections(result);
 				}
 				else
